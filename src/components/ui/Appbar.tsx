@@ -10,7 +10,9 @@ export default function Navbar() {
       <div className="container mx-auto px-4 py-2 flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
-          <span className="text-xl font-bold ml-2 text-foreground">TourNest</span>
+          <span className="text-xl font-bold ml-2 text-foreground">
+            TourNest
+          </span>
         </div>
 
         {/* Search Bar */}
@@ -37,8 +39,12 @@ export default function Navbar() {
         <div className="hidden md:flex items-center space-x-4">
           <FaUser className="text-foreground" />
           <div className="border-l border-gray-300 h-6 mx-2"></div>
-          <div className="text-foreground hover:text-primary cursor-pointer">EN</div>
-          <div className="text-foreground hover:text-primary cursor-pointer">USD</div>
+          <div className="text-foreground hover:text-primary cursor-pointer">
+            EN
+          </div>
+          <div className="text-foreground hover:text-primary cursor-pointer">
+            USD
+          </div>
         </div>
 
         {/* Mobile Menu Button */}
