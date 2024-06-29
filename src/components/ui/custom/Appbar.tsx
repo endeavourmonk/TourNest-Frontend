@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaUser, FaSearch } from "react-icons/fa";
-import { ModeToggle } from "./mode-toggle";
+import { ModeToggle } from "../mode-toggle";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

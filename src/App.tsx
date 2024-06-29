@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { Outlet } from "react-router-dom";
-import Appbar from "./components/ui/Appbar";
+import Appbar from "./components/ui/custom/Appbar";
 import { ThemeProvider } from "@/components/theme-provider";
 
 function App() {
