@@ -10,34 +10,33 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-import calender from "../../assets/calender0.svg";
-import location from "../../assets/location.svg";
-import level from "../../assets/levels.svg";
-import start from "../../assets/start.svg";
-import start_flag from "../../assets/start flag.svg";
+import { FaRegCalendarAlt } from "react-icons/fa";
+import { GrMapLocation } from "react-icons/gr";
+import { IoLocationOutline } from "react-icons/io5";
+import { TbStairsUp } from "react-icons/tb";
 
 export default function TourSelectionCard() {
-  const [filter, setFilter] = useState(null);
+  // const [filter, setFilter] = useState(null);
   return (
-    <div className="bg-red-100 rounded-2xl">
+    <div className=" rounded-2xl">
       <div className="flex flex-col md:flex-row items-center justify-between w-full p-4">
         <div className="w-full p-2 md:flex-1">
           <div className="flex items-center text-left md:text-center">
-            <img className="h-5 pr-2" src={start} />
+            <IoLocationOutline className="mr-2" />
             <p>From</p>
           </div>
-          <Input className="w-full" />
+          <Input className="w-full" placeholder="From" />
         </div>
         <div className="w-full p-2 md:flex-1">
           <div className="flex items-center text-left md:text-center">
-            <img className="h-5 pr-2" src={location} />
+            <GrMapLocation className="mr-2" />
             <p>Destination</p>
           </div>
-          <Input className="w-full" />
+          <Input className="w-full" placeholder="Destination" />
         </div>
         <div className="w-full p-2 md:flex-1">
           <div className="flex items-center text-left md:text-center">
-            <img className="h-5 pr-2" src={level} />
+            <TbStairsUp className="mr-2" />
             <p>Difficulty</p>
           </div>{" "}
           <Select>
@@ -53,7 +52,7 @@ export default function TourSelectionCard() {
         </div>
         <div className="w-full p-2 md:flex-1">
           <div className="flex items-center text-left md:text-center">
-            <img className="h-5 pr-2" src={calender} />
+            <FaRegCalendarAlt className="mr-2" />
             <p>Start Date</p>
           </div>{" "}
           <DatePicker />
