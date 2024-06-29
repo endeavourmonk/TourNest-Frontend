@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaUser, FaSearch } from "react-icons/fa";
+import { ModeToggle } from "./mode-toggle";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,12 +40,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center space-x-4">
           <FaUser className="text-foreground" />
           <div className="border-l border-gray-300 h-6 mx-2"></div>
-          <div className="text-foreground hover:text-primary cursor-pointer">
-            EN
-          </div>
-          <div className="text-foreground hover:text-primary cursor-pointer">
-            USD
-          </div>
+          <ModeToggle />
         </div>
 
         {/* Mobile Menu Button */}

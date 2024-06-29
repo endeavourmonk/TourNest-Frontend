@@ -17,23 +17,23 @@ import start from "../../assets/start.svg";
 import start_flag from "../../assets/start flag.svg";
 
 export default function TourSelectionCard() {
-  const [filter, setFilter] = useState(null);
+  // const [filter, setFilter] = useState(null);
   return (
-    <div className="bg-red-100 rounded-2xl">
+    <div className=" rounded-2xl">
       <div className="flex flex-col md:flex-row items-center justify-between w-full p-4">
         <div className="w-full p-2 md:flex-1">
           <div className="flex items-center text-left md:text-center">
             <img className="h-5 pr-2" src={start} />
             <p>From</p>
           </div>
-          <Input className="w-full" />
+          <Input className="w-full" placeholder="From" />
         </div>
         <div className="w-full p-2 md:flex-1">
           <div className="flex items-center text-left md:text-center">
-            <img className="h-5 pr-2" src={location} />
+            <img className="h-5 pr-2 invert" src={location} />
             <p>Destination</p>
           </div>
-          <Input className="w-full" />
+          <Input className="w-full" placeholder="Destination" />
         </div>
         <div className="w-full p-2 md:flex-1">
           <div className="flex items-center text-left md:text-center">
