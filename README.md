@@ -39,11 +39,11 @@ We use the git-flow branching model. The base branch is `develop`. If you are lo
 
 ## Contributing
 
-Kindly read our [Contributing Guide](CONTRIBUTING.md) to familiarize yourself with ToolJet's development process, how to suggest bug fixes and improvements, and the steps for building and testing your changes. <br>
+Kindly read our [Contributing Guide](CONTRIBUTING.md) to familiarize yourself with TourNest's development process, how to suggest bug fixes and improvements, and the steps for building and testing your changes. <br>
 
 ## Contributors
 
-<a href="https://github.com/tooljet/tooljet/graphs/contributors">
+<a href="https://github.com/endeavourmonk/TourNest-Frontend/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=endeavourmonk/TourNest-Frontend&max=400&columns=20" />
 </a>
 

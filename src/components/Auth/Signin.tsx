@@ -47,7 +47,7 @@ const Signin = () => {
     (!showPassword) ? setShowPassword(true) : setShowPassword(false)
   }
   return (
-    <div className="m-4 border-4 border-primary rounded-lg overflow-hidden">
+    <div className="m-4 border-4 rounded-lg overflow-hidden">
       <div className="grid grid-cols-1 sm:grid-cols-2">
         <div className="hidden sm:block">
           <ImageSlider />
