@@ -7,10 +7,11 @@ import App from "./App.tsx";
 import "./index.css";
 import LandingPage from "./components/Landing/LandingPage.tsx";
 import About from "./components/About/AboutPage.tsx";
-import Auth from "./components/Auth/Auth.tsx";
 import ErrorPage from "./components/Error/ErrorPage.tsx";
 import ToursPage from "./components/Tours/ToursPage.tsx";
 import TourDescription from "./components/Tours/TourDescription.tsx";
+import Signup from "./components/Auth/Signup.tsx";
+import Signin from "./components/Auth/Signin.tsx";
 
 const router = createBrowserRouter([
   {
@@ -37,9 +38,13 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "auth",
-        element: <Auth />,
+        path: "signup",
+        element: <Signup />
       },
+      {
+        path: "signin",
+        element: <Signin />
+      }
     ],
   },
 ]);
