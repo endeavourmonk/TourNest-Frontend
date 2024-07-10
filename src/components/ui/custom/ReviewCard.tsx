@@ -42,10 +42,13 @@ const renderStars = (rating: number) => {
 
   for (let i = 0; i < totalStars; i++) {
     if (i < Math.floor(rating)) {
+      // rendering full ratings
       stars.push(<FaStar key={i} />);
     } else if (i < rating) {
+      // rendering half stars
       stars.push(<FaRegStarHalfStroke />);
     } else {
+      // rendering emtpy stars
       stars.push(<FaRegStar key={i} />);
     }
   }
