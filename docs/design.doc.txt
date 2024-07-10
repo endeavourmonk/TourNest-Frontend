@@ -10,3 +10,6 @@ Pages:
 Components:
 1. Navbar : Logo, Buttons, (Other links) -- Mobile(Hamburgur)
 2. Hero: Filter Cards 
+
+Auth 
+1. api logic (redux toolkit/axios/RTK query)

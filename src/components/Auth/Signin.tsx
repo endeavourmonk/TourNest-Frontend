@@ -16,6 +16,7 @@ import Auth from './AuthHeader'
 import ImageSlider from "./ImageSlider"
 import { useState } from "react"
 
+// user schema for login input
 const UserSchema = z.object({
   email: z
     .string()
@@ -25,7 +26,6 @@ const UserSchema = z.object({
     .min(6, {message: 'Passowrd is too short'})
     .max(10, {message: "Password is too long"})
 })
-
 
 const Signin = () => {
   const [showPassword, setShowPassword] = useState(false)
@@ -37,8 +37,6 @@ const Signin = () => {
     }
   })
 
-  const inputClass = 'rounded-none bg-slate-100 focus-visible:ring-0 focus-visible:ring-offset-0'
-
   const onSubmit = (data: z.infer<typeof UserSchema>) => {
     console.log(JSON.stringify(data, null, 2))
   }
@@ -48,10 +46,13 @@ const Signin = () => {
   }
   return (
     <div className="m-4 border-4 rounded-lg overflow-hidden">
-      <div className="grid grid-cols-1 sm:grid-cols-2">
-        <div className="hidden sm:block">
+      <div className="grid grid-cols-1 md:grid-cols-2">
+        {/* Image slider component */}
+        <div className="hidden md:block">
           <ImageSlider />
         </div>
+
+        {/* signin component */}
         <div className="h-screen flex flex-col justify-center">
           <Auth type='signin' />
           <div className="text-left mx-10">
@@ -64,7 +65,7 @@ const Signin = () => {
                                 <FormItem>
                                     <FormLabel>Email</FormLabel>
                                     <FormControl>
-                                        <Input className={`${inputClass}`}   {...field} placeholder="Enter your email"/>
+                                        <Input {...field} placeholder="Enter your email"/>
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -80,7 +81,6 @@ const Signin = () => {
                                       <div className="relative">
                                         <Input 
                                           type={showPassword ? 'text' : 'password'}
-                                          className={`${inputClass}`}  
                                           placeholder="Enter your password"
                                           {...field} 
                                         />
@@ -98,7 +98,7 @@ const Signin = () => {
                             )}
                         />
                         <div className="flex justify-center">
-                          <Button type="submit" className="w-full sm:w-1/3 rounded-none mt-6">Signin</Button> 
+                          <Button type="submit" className="w-full md:w-1/3 rounded-none mt-6">Signin</Button> 
                         </div>
                     </form>
                 </Form>
