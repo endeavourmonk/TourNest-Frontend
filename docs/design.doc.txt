@@ -1,11 +1,12 @@
 Pages:
-1. Landing Pages
-2. Product Description
-3. Checkout Pages
-4. SignIn/SignUp/Forgot Password
-5. Error
-6. Profile Page
-7. About (Meet the Developers)
+Landing Pages -- Mostly done
+All Tours Page with filter feature (price, destination, etc..)
+Tour Page (Page for individual tour)
+Checkout Pages
+SignIn/SignUp/Forgot Password
+Error
+Profile Page
+About (Meet the Developers)
 
 Components:
 1. Navbar : Logo, Buttons, (Other links) -- Mobile(Hamburgur)

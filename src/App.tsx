@@ -27,8 +27,10 @@ function App() {
     <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
       <React.StrictMode>
         <Appbar />
+        <div className="pt-32">
+          <Outlet />
+        </div>
         <ReviewCard reviewData={reviewData} />
-        <Outlet />
       </React.StrictMode>
     </ThemeProvider>
   );

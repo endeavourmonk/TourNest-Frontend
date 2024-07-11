@@ -1,20 +1,52 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaUser, FaSearch } from "react-icons/fa";
+import { motion } from "framer-motion";
 import { ModeToggle } from "../mode-toggle";
+import { Separator } from "@/components/ui/separator";
+import { FaSearch, FaUser } from "react-icons/fa";
 
-export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+const Navbar: React.FC = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <nav className="bg-background shadow-md">
-      <div className="container mx-auto px-4 py-2 flex justify-between items-center">
+    <motion.header
+      className="bg-background p-4 fixed w-full z-50"
+      initial={{ y: -100 }} // Start position (above the viewport)
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <nav className="container mx-auto px-4 py-2 flex justify-between items-center z-40 w-full">
         {/* Logo */}
         <div className="flex items-center">
           <span className="text-xl font-bold ml-2 text-foreground">
-            TourNest
+            WillThinkName
           </span>
         </div>
+
+        {/* Navigation Links */}
+        <ul className="hidden md:flex space-x-6 justify-between items-center">
+          <li>
+            <Link to="/" className="text-foreground hover:text-primary">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/for-companies"
+              className="text-foreground hover:text-primary"
+            >
+              Tours
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/for-job-seekers"
+              className="text-foreground hover:text-primary"
+            >
+              About
+            </Link>
+          </li>
+        </ul>
 
         {/* Search Bar */}
         <div className="hidden md:flex items-center bg-white border rounded-full px-3 py-1 mx-4">
@@ -26,28 +58,19 @@ export default function Navbar() {
           <FaSearch className="text-primary" />
         </div>
 
-        {/* Navigation Links */}
-        <div className="hidden md:flex space-x-6 items-center">
-          <Link to="/" className="text-foreground hover:text-primary">
-            Home
-          </Link>
-          <Link to="/about" className="text-foreground hover:text-primary">
-            About
-          </Link>
-        </div>
-
-        {/* User Icon and Dropdowns */}
+        {/* Auth and Theme Toggle */}
         <div className="hidden md:flex items-center space-x-4">
           <FaUser className="text-foreground" />
-          <div className="border-l border-gray-300 h-6 mx-2"></div>
+          <Separator orientation="vertical" className="h-6 bg-border" />
           <ModeToggle />
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Hamburger Menu */}
         <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="text-foreground focus:outline-none"
+            aria-label="Toggle Menu"
           >
             <svg
               className="h-6 w-6"
@@ -65,37 +88,71 @@ export default function Navbar() {
             </svg>
           </button>
         </div>
-      </div>
+      </nav>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-background">
+        <motion.div
+          className="md:hidden bg-background flex justify-center min-h-screen"
+          initial={{ y: -10 }} // Start position (above the viewport)
+          animate={{ y: 30 }} // final position
+          transition={{ duration: 0.5 }}
+        >
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <div className="flex items-center bg-white border rounded-full px-3 py-1 mx-4">
-              <input
-                type="text"
-                placeholder="Search for anything.."
-                className="bg-transparent outline-none text-foreground px-2 flex-grow"
-              />
-              <FaSearch className="text-primary" />
-            </div>
-            <Link
-              to="/"
-              className="block text-foreground hover:text-primary"
-              onClick={() => setIsOpen(false)}
-            >
-              Home
-            </Link>
-            <Link
-              to="/about"
-              className="block text-foreground hover:text-primary"
-              onClick={() => setIsOpen(false)}
-            >
-              About
-            </Link>
+            <ul className="mt-12 space-y-8 flex flex-col items-center text-lg font-semibold">
+              <li>
+                {/* Search Bar */}
+                <div className="flex items-center bg-white border rounded-full px-3 py-1 mx-4">
+                  <input
+                    type="text"
+                    placeholder="Search for anything.."
+                    className="bg-transparent outline-none text-foreground px-2 flex-grow"
+                  />
+                  <FaSearch className="text-primary" />
+                </div>
+              </li>
+              <li>
+                <Link
+                  to="/"
+                  className="text-foreground hover:text-primary"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/tours"
+                  className="text-foreground hover:text-primary"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Tours
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/about"
+                  className="text-foreground hover:text-primary"
+                  onClick={() => setIsOpen(false)}
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/contact"
+                  className="text-foreground hover:text-primary"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Contact
+                </Link>
+              </li>
+            </ul>
           </div>
-        </div>
+        </motion.div>
       )}
-    </nav>
+    </motion.header>
   );
-}
+};
+
+export default Navbar;
