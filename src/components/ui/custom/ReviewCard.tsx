@@ -13,27 +13,10 @@ import { FaQuoteLeft } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa"; // empty star
 import { FaStar } from "react-icons/fa"; // full star
 import { FaRegStarHalfStroke } from "react-icons/fa6"; // half star
-
-interface User {
-  _id: string;
-  name: string;
-  username: string;
-  photo: string;
-}
-
-interface ReviewData {
-  _id: string;
-  review: string;
-  rating: number;
-  tour: string;
-  user: User;
-  createdAt: string;
-  isEdited: boolean;
-  updatedAt: string;
-}
+import { Review } from "@/types/Review";
 
 interface ReviewCardProps {
-  reviewData: ReviewData;
+  reviewData: Review;
 }
 
 const renderStars = (rating: number) => {
@@ -66,7 +49,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ reviewData }) => {
     setIsExpanded(!isExpanded);
   };
 
-  const truncateReview = (text: string, maxLength: number = 100): string => {
+  const truncateReview = (text: string, maxLength: number = 50): string => {
     if (text.length > maxLength) {
       return text.substring(0, maxLength) + "...";
     }
@@ -74,7 +57,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ reviewData }) => {
   };
 
   return (
-    <Card className="max-w-sm mx-auto rounded-xl shadow-md overflow-hidden md:max-w-sm border-none">
+    <Card className="w-80 lg:w-96 mx-auto rounded-xl shadow-md overflow-hidden border-none">
       <CardContent className="p-2">
         <CardHeader className="flex-row justify-between items-center">
           <FaQuoteLeft className="text-4xl" />
@@ -88,7 +71,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ reviewData }) => {
         </CardHeader>
         <CardDescription className="mt-4 px-6 text-card-foreground">
           {isExpanded ? review : truncateReview(review)}
-          {review.length > 100 && (
+          {review.length > 10 && (
             <span
               onClick={toggleReview}
               className="pl-2 font-bold underline cursor-pointer"
