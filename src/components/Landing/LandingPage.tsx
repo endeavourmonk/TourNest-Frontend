@@ -5,6 +5,7 @@ import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 import { useGetAllReviewsQuery } from "@/utils/api/tournestApi";
 import Footer from "../ui/custom/Footer";
+import ShimmerReviewCard from "../ui/custom/ShimmerReviewCard";
 
 export default function LandingPage() {
   const { data, error, isLoading } = useGetAllReviewsQuery();
@@ -16,7 +17,14 @@ export default function LandingPage() {
       {error ? (
         <>Oh no, there was an error</>
       ) : isLoading ? (
-        <>Loading...</>
+        <ScrollArea className="w-full m-4">
+          <div className="flex space-x-4 py-4">
+            {[...Array(8)].map((_, i) => (
+              <ShimmerReviewCard key={i} />
+            ))}
+          </div>
+          <ScrollBar orientation="horizontal" />
+        </ScrollArea>
       ) : data ? (
         <ScrollArea className="w-full m-4">
           <div className="flex space-x-4 py-4">

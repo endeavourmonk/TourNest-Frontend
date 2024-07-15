@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           {/* section 1 */}
           <div className="mb-4 md:mb-0">
-            <address className="not-italic flex flex-col space-y-2 md:space-y-4">
+            <address className="not-italic flex flex-col items-center md:items-start space-y-2 md:space-y-4">
               <p>117 Abbey Rd, London NW8 9AY, UK</p>
               <p>+44 0000000000</p>
               <p>
@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
           </div>
           {/* Section 2 */}
           <div className="mb-4 md:mb-0">
-            <ul className="flex flex-col space-y-2 md:space-y-4">
+            <ul className="flex flex-col items-center md:items-start space-y-2 md:space-y-4">
               <li>
                 <Link to="/contact" className="hover:underline">
                   Contact
@@ -43,8 +43,8 @@ const Footer: React.FC = () => {
             </ul>
           </div>
           {/* Section 3 */}
-          <div className="mb-4 md:mb-0 space-y-2 md:space-y-4">
-            <form>
+          <div className="mb-4 md:mb-0 space-y-4 md:space-y-4">
+            <form className="flex flex-col items-center md:items-start">
               <label htmlFor="newsletter" className="block mb-2">
                 Subscribe to get news & offers
               </label>
@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
               </div>
             </form>
             {/* Social Icons */}
-            <div className="mb-4 md:mb-0 flex space-x-4">
+            <div className="flex justify-center md:justify-start space-x-4">
               <Link to="https://www.instagram.com">
                 <a target="_blank" rel="noopener noreferrer">
                   <FaInstagram className="hover:text-blue-400" />

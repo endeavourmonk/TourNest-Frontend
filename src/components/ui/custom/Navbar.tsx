@@ -67,6 +67,9 @@ const Navbar: React.FC = () => {
 
         {/* Hamburger Menu */}
         <div className="md:hidden">
+          <span className="mx-4">
+            <ModeToggle />
+          </span>
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="text-foreground focus:outline-none"

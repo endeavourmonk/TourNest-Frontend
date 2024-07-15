@@ -1,13 +1,13 @@
 Pages:
-Landing Pages -- Mostly done
+Landing Pages -- DONE
 All Tours Page with filter feature (price, destination, etc..)
 Tour Page (Page for individual tour)
 Checkout Pages
-SignIn/SignUp/Forgot Password
-Error
+SignIn/SignUp/Forgot Password -- DONE
+Error --DONE
 Profile Page
 About (Meet the Developers)
 
 Components:
-1. Navbar : Logo, Buttons, (Other links) -- Mobile(Hamburgur)
-2. Hero: Filter Cards 
+1. Navbar : Logo, Buttons, (Other links) -- Mobile(Hamburgur) -- DONE
+2. Hero: Filter Cards -- DONE
