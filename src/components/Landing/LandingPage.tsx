@@ -4,6 +4,7 @@ import HeroSection from "./HeroSection";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 import { useGetAllReviewsQuery } from "@/utils/api/tournestApi";
+import Footer from "../ui/custom/Footer";
 
 export default function LandingPage() {
   const { data, error, isLoading } = useGetAllReviewsQuery();
@@ -17,8 +18,8 @@ export default function LandingPage() {
       ) : isLoading ? (
         <>Loading...</>
       ) : data ? (
-        <ScrollArea className="w-full whitespace-nowrap">
-          <div className="flex space-x-4 p-4">
+        <ScrollArea className="w-full m-4">
+          <div className="flex space-x-4 py-4">
             {data?.data?.map((review: Review) => (
               <ReviewCard key={review?._id} reviewData={review} />
             ))}
@@ -26,6 +27,8 @@ export default function LandingPage() {
           <ScrollBar orientation="horizontal" />
         </ScrollArea>
       ) : null}
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }

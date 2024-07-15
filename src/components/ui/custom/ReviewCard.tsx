@@ -49,7 +49,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ reviewData }) => {
     setIsExpanded(!isExpanded);
   };
 
-  const truncateReview = (text: string, maxLength: number = 50): string => {
+  const truncateReview = (text: string, maxLength: number = 40): string => {
     if (text.length > maxLength) {
       return text.substring(0, maxLength) + "...";
     }
@@ -69,9 +69,9 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ reviewData }) => {
             <CardTitle>{name}</CardTitle>
           </div>
         </CardHeader>
-        <CardDescription className="mt-4 px-6 text-card-foreground">
-          {isExpanded ? review : truncateReview(review)}
-          {review.length > 10 && (
+        <CardDescription className="px-6 text-card-foreground">
+          {isExpanded ? review : truncateReview(review, 50)}
+          {review.length > 50 && (
             <span
               onClick={toggleReview}
               className="pl-2 font-bold underline cursor-pointer"
@@ -80,7 +80,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ reviewData }) => {
             </span>
           )}
         </CardDescription>
-        <CardFooter className="mt-4">
+        <CardFooter className="mt-2">
           <div>
             <div className="flex space-x-1 text-yellow-500 mb-4">
               {renderStars(rating)}
