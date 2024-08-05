@@ -15,7 +15,6 @@ import { Input } from "@/components/ui/input"
 import Auth from './AuthHeader'
 import ImageSlider from "./ImageSlider"
 import { useState } from "react"
-import axios from 'axios'
 
 // user schema for signup input fields
 const UserSchema = z.object({
@@ -54,13 +53,13 @@ const Signup = () => {
   })
 
   const onSubmit = async(data: z.infer<typeof UserSchema>) => {
-    try{
-      const response = await axios.post(`https://api.tournest.rf.gd/api/v1/users/signup`, data)
-      console.log(response)
-    }
-    catch(err) {
-      console.log(err)
-    }
+    // try{
+    //   const response = await axios.post(`https://api.tournest.rf.gd/api/v1/users/signup`, data)
+    //   console.log(response)
+    // }
+    // catch(err) {
+    //   console.log(err)
+    // }
   }
 
   // for toggling password

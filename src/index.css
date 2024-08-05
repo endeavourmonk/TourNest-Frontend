@@ -6,8 +6,8 @@
   :root {
     --background: 40, 27.27%, 93.53%;
     --foreground: 20 14.3% 4.1%;
-    --card: 35, 28.57%, 91.76%;
-    --card-foreground: 20 14.3% 4.1%;
+    --card: 180, 1.03%, 19.02%;
+    --card-foreground: 35, 28.57%, 91.76%;
     --popover: 0 0% 100%;
     --popover-foreground: 20 14.3% 4.1%;
     --primary: 47.9 95.8% 53.1%;
@@ -29,8 +29,8 @@
   .dark {
     --background: 180, 1.03%, 19.02%;
     --foreground: 40, 27.27%, 93.53%;
-    --card: 20 14.3% 4.1%;
-    --card-foreground: 60 9.1% 97.8%;
+    --card: 35, 28.57%, 91.76%;
+    --card-foreground: 180, 1.03%, 19.02%;
     --popover: 20 14.3% 4.1%;
     --popover-foreground: 60 9.1% 97.8%;
     --primary: 47.9 95.8% 53.1%;

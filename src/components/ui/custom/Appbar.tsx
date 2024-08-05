@@ -38,9 +38,7 @@ export default function Navbar() {
 
         {/* User Icon and Dropdowns */}
         <div className="hidden md:flex items-center space-x-4">
-          <Link to='/signin'>
-            <FaUser className="text-foreground" />
-          </Link>
+          <FaUser className="text-foreground" />
           <div className="border-l border-gray-300 h-6 mx-2"></div>
           <ModeToggle />
         </div>
