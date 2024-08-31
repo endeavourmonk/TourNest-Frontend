@@ -1,13 +1,16 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
+import { Review } from "@/types/Review";
+import { Tour } from "@/types/Tour";
+
 export const tournestApi = createApi({
   reducerPath: "tournestApi",
   baseQuery: fetchBaseQuery({ baseUrl: "https://api.tournest.rf.gd/api/v1" }),
   endpoints: (builder) => ({
-    getAllTours: builder.query({
+    getAllTours: builder.query<Tour[], void>({
       query: () => `/tours`,
     }),
-    getAllReviews: builder.query({
+    getAllReviews: builder.query<Review[], void>({
       query: () => `/reviews`,
     }),
     getSignup: builder.query({
