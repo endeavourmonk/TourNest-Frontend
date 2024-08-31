@@ -10,9 +10,20 @@ export const tournestApi = createApi({
     getAllReviews: builder.query({
       query: () => `/reviews`,
     }),
+    getSignup: builder.query({
+      query: () => `/users/signup`,
+    }),
+    getSignin: builder.query({
+      query: () => `/users/signin`,
+    })
   }),
 });
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetAllToursQuery, useGetAllReviewsQuery } = tournestApi;
+export const { 
+  useGetAllToursQuery, 
+  useGetAllReviewsQuery,
+  useGetSignupQuery,
+  useGetSigninQuery,
+} = tournestApi;

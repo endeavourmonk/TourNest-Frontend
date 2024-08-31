@@ -9,5 +9,5 @@ Profile Page
 About (Meet the Developers)
 
 Components:
-1. Navbar : Logo, Buttons, (Other links) -- Mobile(Hamburgur) -- DONE
-2. Hero: Filter Cards -- DONE
+1. Navbar : Logo, Buttons, (Other links) -- Mobile(Hamburgur)
+2. Hero: Filter Cards 
