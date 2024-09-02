@@ -5,12 +5,14 @@ import { Tour } from "@/types/Tour";
 
 export const tournestApi = createApi({
   reducerPath: "tournestApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "https://api.tournest.rf.gd/api/v1" }),
+  baseQuery: fetchBaseQuery({
+    baseUrl: "https://tournest-api.onrender.com/api/v1",
+  }),
   endpoints: (builder) => ({
     getAllTours: builder.query<Tour[], void>({
       query: () => `/tours`,
     }),
-    getAllReviews: builder.query<Review[], void>({
+    getAllReviews: builder.query<{ data: Review[] }, void>({
       query: () => `/reviews`,
     }),
     getSignup: builder.query({
@@ -18,14 +20,14 @@ export const tournestApi = createApi({
     }),
     getSignin: builder.query({
       query: () => `/users/signin`,
-    })
+    }),
   }),
 });
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { 
-  useGetAllToursQuery, 
+export const {
+  useGetAllToursQuery,
   useGetAllReviewsQuery,
   useGetSignupQuery,
   useGetSigninQuery,
