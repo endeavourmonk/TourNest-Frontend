@@ -31,18 +31,12 @@ const Navbar: React.FC = () => {
             </Link>
           </li>
           <li>
-            <Link
-              to="/for-companies"
-              className="text-foreground hover:text-primary"
-            >
+            <Link to="/tours" className="text-foreground hover:text-primary">
               Tours
             </Link>
           </li>
           <li>
-            <Link
-              to="/for-job-seekers"
-              className="text-foreground hover:text-primary"
-            >
+            <Link to="/about" className="text-foreground hover:text-primary">
               About
             </Link>
           </li>

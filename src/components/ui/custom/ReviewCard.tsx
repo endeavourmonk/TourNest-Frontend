@@ -10,38 +10,16 @@ import {
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { FaQuoteLeft } from "react-icons/fa";
-import { FaRegStar } from "react-icons/fa"; // empty star
-import { FaStar } from "react-icons/fa"; // full star
-import { FaRegStarHalfStroke } from "react-icons/fa6"; // half star
 import { Review } from "@/types/Review";
+import RatingStars from "./RatingStars";
 
 interface ReviewCardProps {
   reviewData: Review;
 }
 
-const renderStars = (rating: number) => {
-  const totalStars = 5;
-  const stars = [];
-
-  for (let i = 0; i < totalStars; i++) {
-    if (i < Math.floor(rating)) {
-      // rendering full ratings
-      stars.push(<FaStar key={i} />);
-    } else if (i < rating) {
-      // rendering half stars
-      stars.push(<FaRegStarHalfStroke />);
-    } else {
-      // rendering emtpy stars
-      stars.push(<FaRegStar key={i} />);
-    }
-  }
-
-  return stars;
-};
-
 const ReviewCard: React.FC<ReviewCardProps> = ({ reviewData }) => {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
-
+  console.log("reviewData--------", reviewData);
   const { review, rating, user, createdAt } = reviewData;
   const { name, photo } = user;
 
@@ -69,6 +47,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ reviewData }) => {
             <CardTitle>{name}</CardTitle>
           </div>
         </CardHeader>
+
         <CardDescription className="px-6 text-card-foreground">
           {isExpanded ? review : truncateReview(review, 50)}
           {review.length > 50 && (
@@ -80,11 +59,10 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ reviewData }) => {
             </span>
           )}
         </CardDescription>
+
         <CardFooter className="mt-2">
           <div>
-            <div className="flex space-x-1 text-yellow-500 mb-4">
-              {renderStars(rating)}
-            </div>
+            <RatingStars rating={rating} />
             <div className="text-gray-400 text-sm">
               {new Date(createdAt).toLocaleDateString()}
             </div>

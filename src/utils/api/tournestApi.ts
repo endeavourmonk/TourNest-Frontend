@@ -9,7 +9,13 @@ export const tournestApi = createApi({
     baseUrl: "https://tournest-api.onrender.com/api/v1",
   }),
   endpoints: (builder) => ({
-    getAllTours: builder.query<Tour[], void>({
+    getAllTours: builder.query<
+      {
+        results: number;
+        data: Tour[];
+      },
+      void
+    >({
       query: () => `/tours`,
     }),
     getAllReviews: builder.query<{ data: Review[] }, void>({
